@@ -71,12 +71,13 @@ async function getGithubUser() {
   `;
 
   try {
+    const token = await getToken();
     const user = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'bearer 27d0726e4e904e3227e26ff1c42cfd48349651b4'
+        'Authorization': `bearer ${token}`
       },
       body: JSON.stringify({
         query
@@ -87,6 +88,19 @@ async function getGithubUser() {
     return userData?.data?.viewer;
   } catch (error) {
     console.error('failed fetching user github data', error)
+  }
+}
+
+// get access token credentials
+async function getToken() {
+  try {
+    const token = await fetch('https://buycoins-gist12.herokuapp.com/', {
+      method: 'GET'
+    });
+    const tokenData = await token.json();
+    return tokenData?.token;
+  } catch (error) {
+    console.error('failed getting token credential', error)
   }
 }
 
