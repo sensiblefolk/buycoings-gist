@@ -17,7 +17,7 @@ let user = userDetail.children[0].children;
 
 async function initialize() {
   const userData = await getGithubUser();
-  const totalCount = userData.repositories.totalCount;
+  const totalCount = userData?.repositories?.totalCount;
 
   // add .hide class to loader and remove .hide class from 
   // container
@@ -76,7 +76,7 @@ async function getGithubUser() {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'bearer 105b89c8ca215bfd87d9b80b4b9cfec37af211cc'
+        'Authorization': 'bearer 27d0726e4e904e3227e26ff1c42cfd48349651b4'
       },
       body: JSON.stringify({
         query
