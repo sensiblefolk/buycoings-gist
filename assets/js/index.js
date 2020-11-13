@@ -24,7 +24,7 @@ async function initialize() {
   loader.classList.add('hide');
   loader.children[0].classList.add('hide');
   container.classList.remove("hide");
- 
+
   avatarUrl.setAttribute('src', userData.avatarUrl);
   user[0].innerHTML = userData.name;
   user[1].innerHTML = userData.login;
@@ -106,9 +106,9 @@ async function getToken() {
 
 
 function addRepository(repos) {
-  const language = repos.languages.nodes.length > 0 ? repos.languages.nodes[0] : { name: 'Java', color: '#b07219'}
+  const language = repos.languages.nodes.length > 0 ? repos.languages.nodes[0] : { name: 'Java', color: '#b07219' }
   const currentDate = new Date(repos.updatedAt);
-  
+
   const updatedDate = `${months[currentDate.getMonth()]} ${currentDate.getDate()}`
   const child = `
     <div class="row space-between align-start repository">
@@ -167,5 +167,5 @@ function addSearchSummary(count, privacy) {
 }
 
 function printRepository(repository) {
-  
+
 }
