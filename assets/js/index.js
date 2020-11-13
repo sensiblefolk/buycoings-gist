@@ -72,6 +72,7 @@ async function getGithubUser() {
 
   try {
     const token = await getToken();
+    console.log('called to get token', token);
     const user = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
