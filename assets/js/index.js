@@ -76,7 +76,7 @@ async function getGithubUser() {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'bearer 27d0726e4e904e3227e26ff1c42cfd48349651b4'
+        'Authorization': 'bearer 5f1094c393daa0fd9af960c8e7d1068b70772d6d'
       },
       body: JSON.stringify({
         query
